@@ -3,19 +3,26 @@
 #the number of lines that matched the regular expression:
 
 import re
-fhand = input ('Like grep : exercice_11.1.py -e \"your regular expression\" -f \"the_file\": ')
-
+fhand = input ('Enter a file to search: ')
 try :
     if len(fhand) < 1 :
-       fichier = 'mbox-short.txt'
-
+       fichier = open('mbox-short.txt')
     else:
        fichier = open(fhand)
-
 except :
-    print('Enter a valid regular expression!')
+    print('Enter a valid file name!')
     exit()
 
-print(fichier)
+regex = input ('Enter a regular expression: ')
+occurence = 0
+for line in fichier :
+   #if I use rstrip() a get a wrong result on mbox.txt with java$
+   #grep gives me 4175 but if the next line is uncommented
+   #the program gives 4218... why? There is 43 lines ending with
+   #java\s (white space after java).
+   #line = line.rstrip()
+   if re.search(regex,line) :
+       occurence += 1
+print(fhand, 'had', occurence, 'lines that matched', regex)
 
 
