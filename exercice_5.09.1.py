@@ -4,14 +4,14 @@
 somme = 0.0
 count = 0
 
-while True :
-    try :
+while True:
+    try:
         data = input('Enter a number: ')
-        if data == 'done' :
+        if data == 'done':
             break
         somme = somme + float(data)
         count = count + 1
-    except :
+    except:
 
         print('Bad data')
 
