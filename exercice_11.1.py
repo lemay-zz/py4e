@@ -1,4 +1,5 @@
-# Exercise 1: Write a simple program to simulate the operation of the grep
+# exercice_11.1.py
+# Write a simple program to simulate the operation of the grep
 # command on Unix. Ask the user to enter a regular expression and count
 # the number of lines that matched the regular expression:
 
@@ -16,7 +17,7 @@ except BaseException:
 regex = input('Enter a regular expression: ')
 occurence = 0
 for line in fichier:
-    # if I use rstrip() a get a wrong result on mbox.txt with java$
+    # if I use rstrip() I get a wrong result on mbox.txt with java$
     # grep gives me 4175 but if the next line is uncommented
     # the program gives 4218... why? There is 43 lines ending with
     # java\s (white space after java).
